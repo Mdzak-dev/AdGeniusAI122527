@@ -1,5 +1,4 @@
 import React from 'react';
-import evolveLogo from '../assets/evolve-logo.png';
 
 const Sidebar = () => {
   return (
@@ -7,14 +6,6 @@ const Sidebar = () => {
       <div className="mb-10 mt-4">
         {/* Container matching high-end 3D metallic aesthetic */}
         <div className="h-24 w-24 mx-auto rounded-xl shadow-[0_8px_16px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.3),inset_0_-1px_1px_rgba(0,0,0,0.5)] border border-gray-600 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-950 overflow-hidden flex items-center justify-center p-[2px] relative before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl">
-          <img
-            src={evolveLogo}
-            alt="Evolve Logo"
-            className="w-full h-full object-cover rounded-[10px] relative z-10"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
         </div>
       </div>
 
