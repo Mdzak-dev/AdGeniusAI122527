@@ -1,6 +1,10 @@
 import React from 'react';
 import evolveLogo from '../assets/evolve-logo.png';
 
+const handleImageError = (e) => {
+  e.target.style.display = 'none';
+};
+
 const Sidebar = () => {
   return (
     <div className="w-64 bg-[#0a0a0f] text-white min-h-screen p-5 flex flex-col border-r border-gray-800 shadow-2xl relative z-20">
@@ -11,9 +15,7 @@ const Sidebar = () => {
             src={evolveLogo}
             alt="Evolve Logo"
             className="w-full h-full object-cover rounded-[10px] relative z-10"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
+            onError={handleImageError}
           />
         </div>
       </div>
