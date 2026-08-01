@@ -1,4 +1,3 @@
-import React from 'react';
 import evolveLogo from '../assets/evolve-logo.png';
 
 const Sidebar = () => {
