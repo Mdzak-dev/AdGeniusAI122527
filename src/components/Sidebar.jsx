@@ -2,6 +2,12 @@ import React from 'react';
 import evolveLogo from '../assets/evolve-logo.png';
 
 const Sidebar = () => {
+  const navLinks = [
+    { name: 'Dashboard', href: '#', isActive: true },
+    { name: 'Analytics', href: '#', isActive: false },
+    { name: 'Settings', href: '#', isActive: false },
+  ];
+
   return (
     <div className="w-64 bg-[#0a0a0f] text-white min-h-screen p-5 flex flex-col border-r border-gray-800 shadow-2xl relative z-20">
       <div className="mb-10 mt-4">
@@ -26,9 +32,19 @@ const Sidebar = () => {
         </div>
 
         <nav className="space-y-2.5">
-          <a href="#" className="block px-4 py-2.5 rounded-md bg-gradient-to-r from-gray-800/80 to-gray-800/30 border border-gray-700/50 hover:from-gray-700/80 hover:to-gray-700/30 text-sm font-semibold shadow-sm transition-all text-gray-200">Dashboard</a>
-          <a href="#" className="block px-4 py-2.5 rounded-md hover:bg-gray-800/30 text-sm font-medium transition-all text-gray-400 hover:text-gray-200">Analytics</a>
-          <a href="#" className="block px-4 py-2.5 rounded-md hover:bg-gray-800/30 text-sm font-medium transition-all text-gray-400 hover:text-gray-200">Settings</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`block px-4 py-2.5 rounded-md text-sm transition-all ${
+                link.isActive
+                  ? 'bg-gradient-to-r from-gray-800/80 to-gray-800/30 border border-gray-700/50 hover:from-gray-700/80 hover:to-gray-700/30 font-semibold shadow-sm text-gray-200'
+                  : 'hover:bg-gray-800/30 font-medium text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
       </div>
 
